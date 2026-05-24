@@ -5,69 +5,56 @@ Pydantic-схема для персоны.
 (раскомментируй и допиши на семинаре):
 """
 
-# ───── Раунды 2–4: плоская Persona ─────
-# from typing import Literal
-# from pydantic import BaseModel, Field, field_validator
-#
-# CITIES = {
-#     "Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург",
-#     "Казань", "Нижний Новгород", "Самара", "Краснодар",
-# }
-#
-#
-# class Persona(BaseModel):
-#     name: str
-#     age: int = Field(ge=18, le=75)
-#     city: str
-#     income_rub: int = Field(ge=30_000, le=500_000)
-#     occupation: Literal[
-#         "студент", "инженер", "менеджер", "учитель",
-#         "врач", "предприниматель", "пенсионер", "IT-специалист",
-#     ]
-#     shopping_frequency: Literal["редко", "иногда", "часто"]
-#     preferred_category: Literal[
-#         "электроника", "одежда", "продукты", "книги",
-#         "товары для дома", "косметика", "спорт",
-#     ]
-#
-#     @field_validator("city")
-#     @classmethod
-#     def city_must_be_in_list(cls, v: str) -> str:
-#         if v not in CITIES:
-#             raise ValueError(f"Город «{v}» не из утверждённого списка")
-#         return v
+from typing import Literal
+from pydantic import BaseModel, Field, model_validator
+from datetime import datetime
+
+CURRENT_YEAR = datetime.now().year
+
+CITIES_LIST = [
+    "Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань",
+    "Нижний Новгород", "Самара", "Омск", "Челябинск", "Ростов-на-Дону"
+]
+
+SPECIALITIES_LIST = [
+    "Программист", "Дизайнер", "Маркетолог", "Продакт-менеджер",
+    "Инженер-конструктор", "Экономист", "Юрист",
+    "Риск-менеджер", "Тестировщик"
+]
+
+COURSES_LIST = [
+    "Основы финансового анализа", "Искусство презентации",
+    "Управление проектами", "Time management", "Прикладное применение нейросетей",
+    "Искусство коммуникации", "Руководство командой"
+]
+
+CITIES = Literal[tuple(CITIES_LIST)]
+SPECIALITIES = Literal[tuple(SPECIALITIES_LIST)]
+DESIRED_COURSES = Literal[tuple(COURSES_LIST)]
+
+class Address(BaseModel):
+    city: CITIES
+    district: str
 
 
-# ───── Раунд 4.5: вложенная Address ─────
-# class Address(BaseModel):
-#     city: str
-#     district: str = Field(min_length=2, max_length=40)
-#
-#     @field_validator("city")
-#     @classmethod
-#     def city_must_be_in_list(cls, v: str) -> str:
-#         if v not in CITIES:
-#             raise ValueError(f"Город «{v}» не из утверждённого списка")
-#         return v
-#
-#
-# class Persona(BaseModel):
-#     name: str
-#     age: int = Field(ge=18, le=75)
-#     address: Address       # ← было city: str, стало вложенный объект
-#     income_rub: int = Field(ge=30_000, le=500_000)
-#     occupation: Literal[
-#         "студент", "инженер", "менеджер", "учитель",
-#         "врач", "предприниматель", "пенсионер", "IT-специалист",
-#     ]
-#     shopping_frequency: Literal["редко", "иногда", "часто"]
-#     preferred_category: Literal[
-#         "электроника", "одежда", "продукты", "книги",
-#         "товары для дома", "косметика", "спорт",
-#     ]
-#
-#     # Удобный shortcut для check_personas.py и 5_analysis.py —
-#     # persona.city работает что для плоской, что для вложенной схемы.
-#     @property
-#     def city(self) -> str:
-#         return self.address.city
+class Application(BaseModel):
+    full_name: str
+    age: int = Field(ge=22, le=65)
+    address: Address
+    speciality: SPECIALITIES
+    desired_course: DESIRED_COURSES
+    years_of_experience: int = Field(ge=0, le=40)
+    graduation_year: int = Field(ge=1980, le=2024)
+
+    @model_validator(mode="after")
+    def check_age_graduation_consistency(self):
+        grad_age = self.age - (CURRENT_YEAR - self.graduation_year)
+
+        if not (18 <= grad_age <= 30):
+            raise ValueError(
+                f"Несоответствие данных: возраст {self.age} "
+                f"и год выпуска {self.graduation_year}. "
+                f"Возраст при выпуске получился {grad_age} лет."
+            )
+
+        return self
