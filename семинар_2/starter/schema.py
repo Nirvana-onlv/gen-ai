@@ -6,7 +6,7 @@ Pydantic-схема для персоны.
 """
 
 from typing import Literal
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field, model_validator, field_validator
 from datetime import datetime
 
 CURRENT_YEAR = datetime.now().year
@@ -45,6 +45,20 @@ class Application(BaseModel):
     desired_course: DESIRED_COURSES
     years_of_experience: int = Field(ge=0, le=40)
     graduation_year: int = Field(ge=1980, le=2024)
+
+    @field_validator("graduation_year")
+    @classmethod
+    def graduation_year_in_valid_range(cls, v: int) -> int:
+        if v > CURRENT_YEAR:
+            raise ValueError(
+                f"graduation_year ({v}) не может быть в будущем. "
+                f"Текущий год: {CURRENT_YEAR}."
+            )
+        if v < 1970:
+            raise ValueError(
+                f"graduation_year ({v}) слишком давно — минимум 1970."
+            )
+        return v
 
     @model_validator(mode="after")
     def check_age_graduation_consistency(self):
