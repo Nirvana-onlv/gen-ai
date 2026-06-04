@@ -1,0 +1,1745 @@
+[
+  {
+    "review_id": "0",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "Заряд держит целый день.",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "В розовом цвете смотрится очень необычно.",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "Touch ID очень быстрый и удобный.",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "3D Touch просто восхитительная вещь!",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "review_id": "1",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "negative",
+        "quote": "Отключается при температуре близкой к нулю, непонятно ведет себя батарея",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "review_id": "2",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "negative",
+        "quote": "ведь что произойдёт с временем работы, если увеличить до FHD?!",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.5
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "negative",
+        "quote": "1 гб оперативки тоже прошлый век!",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "скопировали не только функционал, но и дизайн.",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "Цена и была неадекватно завышена",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "Не надо рассказывать сказки про великолепную оптимизацию iOS",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "review_id": "3",
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Внешний вид, как для меня, так 5-ка выглядит интереснее и солиднее.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "4",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "Достойный телефон. Пользоваться одно удовольствие.",
+        "confidence": 0.4
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "Достойный телефон. Пользоваться одно удовольствие.",
+        "confidence": 0.4
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "Достойный телефон. Пользоваться одно удовольствие.",
+        "confidence": 0.4
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Достойный телефон. Пользоваться одно удовольствие.",
+        "confidence": 0.4
+      },
+      {
+        "aspect": "price",
+        "sentiment": "positive",
+        "quote": "Достойный телефон. Пользоваться одно удовольствие.",
+        "confidence": 0.4
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "Достойный телефон. Пользоваться одно удовольствие.",
+        "confidence": 0.4
+      }
+    ]
+  },
+  {
+    "review_id": "5",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "6s gold 64gb",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "6s gold 64gb",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "6s gold 64gb",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "design",
+        "sentiment": "neutral",
+        "quote": "6s gold 64gb",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "6s gold 64gb",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "6s gold 64gb",
+        "confidence": 0.1
+      }
+    ]
+  },
+  {
+    "review_id": "6",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "Батарейка-не знаю почему все жалуются. За неё, кстати, переживала. Ан нет, на день с головой хватает.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "Камера очень хорошая, очень четкая, яркая, быстрая. Селфи камера тоже крутая, не шумит, хороший угол обзора.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "Дисплей шикарный. Яркий, насыщенный, все летает.",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Первое, что порадовало- это дизайн и качество сборки. Тут все на высоте.",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "Цена -жа,высокая,но не только на него, посмотрите на доллар.",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "В клавиатуре нельзя поместить курсор на середину слова. Блин ну как так?",
+        "confidence": 0.7
+      }
+    ]
+  },
+  {
+    "review_id": "7",
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "классный дизайн",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "круто снимает в помещении, за счет позволяя понизить ISO",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "совершенно не тормозит и у него очень четкая и плавная картинка",
+        "confidence": 0.95
+      }
+    ]
+  },
+  {
+    "review_id": "8",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "хорошо держит батарею, даже при активном использовании",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "камера такая же, как на 5s, снимки получаются отличного качества",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "По функциям особого отличия от iPhone 5s я не нашла",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "новый дизайн мне очень нравится, особенно в белом цвете",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "привычный и удобный touch id",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "review_id": "9",
+    "aspects": [
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "реальная цена ему 20-25 тыс. Но никак не 32",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "Работает очень хорошо",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Понравился сенсор отпечатков",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "10",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "negative",
+        "quote": "Батарею бы хотелось помощнее, увы она в шестерке тоже не фонтан",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Бесит, что защитные стекла все идут не на весь экран а по краям значительное расстояние идет из-за скошенных углов",
+        "confidence": 0.95
+      }
+    ]
+  },
+  {
+    "review_id": "11",
+    "aspects": [
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "стал еще быстрее и плавнее",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "с ios10 стал еще быстрее и плавнее",
+        "confidence": 0.95
+      }
+    ]
+  },
+  {
+    "review_id": "12",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "В целом хороший, добротный телефон.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "В целом хороший, добротный телефон.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "В целом хороший, добротный телефон.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Тонкий корпус с закругленными, ставшими узкими, гранями не особо обрадовал. В руках ощущается скользким",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "В целом хороший, добротный телефон.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "Очень удивил мелкий глюк - при выводе списка абонентов при их прокручивании вниз экрана на самый последний невозможно нажать, он сразу прячется за нижний край",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "13",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "Аккумулятора в стандартном режиме всегда хватает на полный день.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "лучше так (имхо), чем портить дизайн и увеличивать толщину устройства ради большего аккумулятора.",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.1
+      }
+    ]
+  },
+  {
+    "review_id": "14",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "чувствуется разница в первую очередь в скорости работы и аккумуляторе",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "Фото живые - отличное качество, много разных функций у камеры",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "чувствуется разница в первую очередь в скорости работы",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Размер корпуса стал больше, удобнее смотреть фильмы",
+        "confidence": 0.85
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "Отличный айфон, всем советую!",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "Отличный айфон",
+        "confidence": 0.3
+      }
+    ]
+  },
+  {
+    "review_id": "15",
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "телефон очень прочный, роняла его много раз, и, благо, без последствий.",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "price",
+        "sentiment": "positive",
+        "quote": "За его нынешнюю стоимость это прекрасный аппарат!",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "мне 64гб не хватает",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "review_id": "16",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.5
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.5
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "выдает прекрасную производительность, можно спокойно рубиться в WOT без каких либо лагов",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Очень тонкий, приятный монолитный корпус со скруглёнными гранями, отлично лежит в руке",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.5
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "Пользуюсь айфонами с модели 3g",
+        "confidence": 0.6
+      }
+    ]
+  },
+  {
+    "review_id": "17",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "В целом аппарат кайфовый",
+        "confidence": 0.2
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "В целом аппарат кайфовый",
+        "confidence": 0.2
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "В целом аппарат кайфовый",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "самым удобным в эксплуатации",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "цена нынешняя пугает",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "В целом аппарат кайфовый",
+        "confidence": 0.1
+      }
+    ]
+  },
+  {
+    "review_id": "18",
+    "aspects": [
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "Проблемы чисто софтверные, и выражаются в явном неуважении компании к своим клиентам.",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "review_id": "19",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "Отсутствует упоминание",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "Отсутствует упоминание",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "Отсутствует упоминание",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "design",
+        "sentiment": "neutral",
+        "quote": "Отсутствует упоминание",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "Отсутствует упоминание",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "ОС телефона и софт заточены под выполнение строгих правил Apple.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "20",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "negative",
+        "quote": "Быстро садится батарея",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "Камера на 5",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "цвета на экране отлично отображаются",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "21",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "negative",
+        "quote": "Аккумулятор работал нормально, но через месяц после того, как мы поменяли на новый, он стал менее автономным.",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "negative",
+        "quote": "компания не может обеспечить пользователю плавную работу смартфона",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "за такие бешеные бабки",
+        "confidence": 0.95
+      }
+    ]
+  },
+  {
+    "review_id": "22",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "чувства смешанные",
+        "confidence": 0.2
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "negative",
+        "quote": "фронтальная камера не оч",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "Вроде и одна из последних моделей",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Недостатки по корпусу - уж очень он нежный,особенно при смене чехлов.",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "нехваткой памяти и денег на модель с объемом памяти побольше",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "чувства смешанные",
+        "confidence": 0.1
+      }
+    ]
+  },
+  {
+    "review_id": "23",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "наличие зарядок и шнуров от прошлого айфона",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "Не являюсь особым приверженцом Эппл или Андроид",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "Не являюсь особым приверженцом Эппл или Андроид",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "design",
+        "sentiment": "neutral",
+        "quote": "Не являюсь особым приверженцом Эппл или Андроид",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "за эти деньги можно было взять к примеру Самсунг Галакси S7.",
+        "confidence": 0.6
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "беспроблемной миграции, перехода",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "24",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "мой новый айфон 6 живет уже второй день без подзарядки и тратит в простое несколько процентов за ночь (около 5%)",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "для любителей фотографировать",
+        "confidence": 0.4
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "само удовольствие от процесса взаимодействия с устройством остается",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Качество изготовления отличное. Не люфтит, кнопка home не болтается как на 5s, краска не облезает",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "цена завышена",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "система выросла с тех пор, появилась куча новых возможностей, новый дизайн",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "25",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "просто супер",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "ни каких люфтов, сползаний камер и прочего",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "просто супер",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "ни каких люфтов, сползаний камер и прочего",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "positive",
+        "quote": "стоит чуть доплатить",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "просто супер",
+        "confidence": 0.3
+      }
+    ]
+  },
+  {
+    "review_id": "26",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "negative",
+        "quote": "Я для себя понял, что не стоит брать продукцию Apple.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "negative",
+        "quote": "Я для себя понял, что не стоит брать продукцию Apple.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "negative",
+        "quote": "Я для себя понял, что не стоит брать продукцию Apple.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Я для себя понял, что не стоит брать продукцию Apple.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "Купил эту ошибку природы за 54990 рублей",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "Я для себя понял, что не стоит брать продукцию Apple.",
+        "confidence": 0.3
+      }
+    ]
+  },
+  {
+    "review_id": "27",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "negative",
+        "quote": "расход аккума запредельный, на встречу только с повербанком.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "Фотки хорошие, из мобильных камер думаю в топ 10. Новый датчик гораздо быстрее чем на 5s.",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "negative",
+        "quote": "бывает что греется при самых простых задачах - типа проверить почту.",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "эргономики - очень не плохо, тонкий, легких, прочный.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "positive",
+        "quote": "слил его на ваторичке за 1 день и по весьма вкусной цене.",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "С точки зрения использования, дно.",
+        "confidence": 0.3
+      }
+    ]
+  },
+  {
+    "review_id": "28",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "батарея чуть лучше",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "камера чуть быстрее",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "TouchID второго поколения чуть быстрее",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "А forcetouch и Taptic Engine нового поколения вносят свою лепту к комфорту",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.1
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "сложности с синхронизацией (допустим историю переписки с того же WhatsApp он с гугловской учетки тянуть не хочет)",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "29",
+    "aspects": [
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "iphone6 по части быстродействия на голову выше",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "Да и хорошая тушка с андроидом немногим дешевле стоит",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "а джейл дает достаточную свободу действий при работе с файлами и архивами",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "30",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.0
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.0
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "Я пользуюсь им ежедневно на все 100% - почта, инет, приложения и доволен.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "design",
+        "sentiment": "neutral",
+        "quote": "",
+        "confidence": 0.0
+      },
+      {
+        "aspect": "price",
+        "sentiment": "positive",
+        "quote": "Это качественный продукт, который стоит своих денег.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "Настроил достаточно быстро. Надо было подумать, как включить исчезнувший режим модема, но в целом все ок.",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "31",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "телефон отличный",
+        "confidence": 0.5
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "телефон отличный",
+        "confidence": 0.5
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "ни в функциях",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Ни во внешнем виде (даже не понтанешься=))",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "вообще нет смысла покупать его, если есть iphone 6",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "ни в функциях (опять же кроме Тач 3Д)",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "32",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "Никаких положительных эмоций этот аппарат у меня не вызывает.",
+        "confidence": 0.2
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "Никаких положительных эмоций этот аппарат у меня не вызывает.",
+        "confidence": 0.2
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "Никаких положительных эмоций этот аппарат у меня не вызывает.",
+        "confidence": 0.2
+      },
+      {
+        "aspect": "design",
+        "sentiment": "neutral",
+        "quote": "Никаких положительных эмоций этот аппарат у меня не вызывает.",
+        "confidence": 0.2
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "реально не стоит это устройство 66т.р.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "Никаких положительных эмоций этот аппарат у меня не вызывает.",
+        "confidence": 0.2
+      }
+    ]
+  },
+  {
+    "review_id": "33",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "Купила дочки ей очень понравилось",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "Купила дочки ей очень понравилось",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "Купила дочки ей очень понравилось",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "design",
+        "sentiment": "neutral",
+        "quote": "Купила дочки ей очень понравилось",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "Купила дочки ей очень понравилось",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "Купила дочки ей очень понравилось",
+        "confidence": 0.3
+      }
+    ]
+  },
+  {
+    "review_id": "34",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "Для меня - лучший телефон.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "Для меня - лучший телефон.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "мощная начинка",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Безупречный дизайн",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "Да, дорого.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "крутейшая оптимизация софта и железа, удобнейшая iOS 9",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "35",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "Насчет батарейки, то это не телефон быстро ее разряжает, а использование 3G и LTE. Отключайте сотовые данные и будет вам счастье в виде долгой работы батареи. Андроид-телефоны съедают заряд еще быстрее.",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "negative",
+        "quote": "если вам требуется - это звонить, писать смс и делать селфи, не покупайте iPhone!",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "В итоге приобрел данный девайс, моментально подгрузился весь список контактов и пр. из облака с моего старого айфона.",
+        "confidence": 0.4
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Особенно жаль тех девочек, которые долго копили или выпрашивали данный кирпич, а потом случайно уронили и разбили стекло",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "Если чтобы купить его, вам нужно копить деньги несколько месяцев, не покупайте iPhone!",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "Очень радует, что исчезла необходимость синхронизации с iTunes и устройство спокойно может существовать и обновляться фактически без непосредственного взаимодействия с компьютером.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "36",
+    "aspects": [
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "работает хорошо",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "после обновлений 8.0.1 и 8.0.2 многие баги уйдут",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "конечная стоимость высоковата",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "design",
+        "sentiment": "neutral",
+        "quote": "увеличение дисплея для меня и плюс и минус",
+        "confidence": 0.7
+      }
+    ]
+  },
+  {
+    "review_id": "37",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "Рассказывать обо всех плюсах и минусах я не буду",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "пяти мегапиксельную фронтален",
+        "confidence": 0.5
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "тот же самый iPhone 6s",
+        "confidence": 0.4
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Телефон шикарный",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "цена кусается.Более 30000 рублей!",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "Отзывов и обзоров полно",
+        "confidence": 0.2
+      }
+    ]
+  },
+  {
+    "review_id": "38",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "negative",
+        "quote": "На день зарядки еле хватает.",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "после покупки пришлось на ремонт отдать. Разговорный микрофон заменить.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "39",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "из-за лишних пикселей пришлось бы ощутимо пожертвовать автономностью",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "добротной камерой",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "бешеной начинкой",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "компактный аппарат, которым можно спокойно пользоваться в одной руке",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "Не сказать, что я в восторге от этого недешёвого аппарата",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "пока полностью им доволен",
+        "confidence": 0.5
+      }
+    ]
+  },
+  {
+    "review_id": "40",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "посмотрим, как со временем себя покажет",
+        "confidence": 0.6
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "В целом аппарат отличный",
+        "confidence": 0.6
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "посмотрим, как со временем себя покажет",
+        "confidence": 0.6
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "пару раз летал у меня в машине с держателя для телефона - ничего, выжил, ни царапинки",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "было бы приятно видеть всё это из коробки, когда 40к выкладываешь за телефон",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "В целом аппарат отличный",
+        "confidence": 0.6
+      }
+    ]
+  },
+  {
+    "review_id": "41",
+    "aspects": [
+      {
+        "aspect": "price",
+        "sentiment": "positive",
+        "quote": "за 300 с небольшим баксов вполне вменяемая цена",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "К скорости работы вопросов нет.",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "battery",
+        "sentiment": "negative",
+        "quote": "Батарею держит в среднем около суток - маловато.",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "Прошивка с мелкими багами.",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "Камера снимает не плохо, но могла бы и лучше - опять же проблема ПО.",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "review_id": "42",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "Аккумулятор - судить рано, год поюзаю - тогда можно об этом говорить.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "Фронталка широкоуголная - да, прикольная штука.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "Пока все нравится.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "design",
+        "sentiment": "neutral",
+        "quote": "маленький xz1",
+        "confidence": 0.5
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "Но я все равно купила этот маленький xz1.",
+        "confidence": 0.6
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "Интерфейс поменялся. Нет быстрого доступа к калькулятору и фото экрана. Непонятно зачем убрали.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "43",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "negative",
+        "quote": "появилось много косяков",
+        "confidence": 0.4
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "negative",
+        "quote": "появилось много косяков",
+        "confidence": 0.4
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "negative",
+        "quote": "Аппарыты выпущеные в продажу не проработаны и плохо продуманы",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Аппарыты выпущеные в продажу не проработаны и плохо продуманы",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "Вы либо качество поднимите, либо цену снизьте",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "Аппарыты выпущеные в продажу не проработаны и плохо продуманы",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "44",
+    "aspects": [
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "iOS самая лучшая система, без геморроев",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "да, есть платные вещи - как музыка, но вы и получаете качественный товар",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "review_id": "45",
+    "aspects": [
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "Стоит ли покупать аппарат за 650$ для звонков, (с)ебяшек и сидения вконтактике? ОДНОЗНАЧНО НЕТ.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "для звонков, (с)ебяшек и сидения вконтактике",
+        "confidence": 0.6
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "1 Гб оперативки + А8 - за глаза.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "design",
+        "sentiment": "neutral",
+        "quote": "Эргономика: на любителя. Привыкнув к четким граням iPhone начиная с 4го, шестерка кажется какой-то 'неайфонной', что ли.",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "Единая экосистема Apple значительно упрощает жизнь. ... Очень крутые фичи",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "46",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "Телефон больше модный,мажорный чем прогрессивный.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "Телефон больше модный,мажорный чем прогрессивный.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "neutral",
+        "quote": "Телефон больше модный,мажорный чем прогрессивный.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Качество сборки на уровне дешевых аппаратов.",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "Телефон больше модный,мажорный чем прогрессивный.",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "Телефон больше модный,мажорный чем прогрессивный.",
+        "confidence": 0.3
+      }
+    ]
+  },
+  {
+    "review_id": "47",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "Но тогда, полагаю не вытянул бы процессор и батарейка",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "negative",
+        "quote": "Камера не плохого качества. Только при слабом освещении много шумов.",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "negative",
+        "quote": "Прилично греется в играх",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "но все ощущение дороговизны аппарата портит низкое разрешение экрана",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "из 16 гб всего доступно 11 это даже не смешно",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "software",
+        "sentiment": "neutral",
+        "quote": "Прошивка 8.1 работает стабильно, шустро и притензий к ней нет",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "48",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "в игры не играю",
+        "confidence": 0.2
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "positive",
+        "quote": "Фотографии получаются просто божественные, не нужна никакая обработка вообще, качество на уровне!",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "Интернет летает, всё быстро загружает. Приложения не тупят и не вылетают, система работает слаженно",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Нравится дизайн, причём не только телефона, но и его начинки: приложения, меню, программы - у всего этого отличный стиль. Телефон смотрится красиво и дорого.",
+        "confidence": 1.0
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "цена, конечно, высока",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "Приложения не тупят и не вылетают, система работает слаженно, практически идеально.",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "review_id": "49",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "neutral",
+        "quote": "Не сказал бы, чтобы плохо держит батарею, но и не могу сказать, что держит долго.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "software",
+        "sentiment": "positive",
+        "quote": "К IOS привык, раньше эта система вообще не нравилась, сейчас стала более менее открытой.",
+        "confidence": 0.7
+      },
+      {
+        "aspect": "price",
+        "sentiment": "positive",
+        "quote": "Как по мне - так цена оправдывает то, что я получил из коробки.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "50",
+    "aspects": [
+      {
+        "aspect": "battery",
+        "sentiment": "positive",
+        "quote": "Первые дни использования батарея держит в режиме работы... проработал больше суток. То есть, утром часов в 8.00 снимал на 100% заряженным, до ночи оставалось заряда примерно 30 %.",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "camera",
+        "sentiment": "neutral",
+        "quote": "съемка видео",
+        "confidence": 0.3
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "Приятно удивлен качеством принятия сигнала... WI-FI так же без нареканий, загрузки осуществляются быстро. Touch ID работает отлично.",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "Сам аппарат по ощущениям монолитен, а металл приятно холодит руку.",
+        "confidence": 0.95
+      },
+      {
+        "aspect": "price",
+        "sentiment": "neutral",
+        "quote": "Если кажется дорого- есть много достойных альтернатив.",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "software",
+        "sentiment": "negative",
+        "quote": "Допилят софт и будет то, что надо.",
+        "confidence": 0.8
+      }
+    ]
+  }
+]

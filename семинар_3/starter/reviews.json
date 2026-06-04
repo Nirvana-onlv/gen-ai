@@ -1,0 +1,886 @@
+[
+  {
+    "review_id": "0",
+    "brand": null,
+    "model": null,
+    "detalization": "cursory",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "1",
+    "brand": null,
+    "model": null,
+    "detalization": "cursory",
+    "issues": [
+      {
+        "category": "battery",
+        "severity": 3,
+        "quote": "Отключается при температуре близкой к нулю"
+      },
+      {
+        "category": "battery",
+        "severity": 2,
+        "quote": "непонятно ведет себя батарея"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "2",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "На этот раз скопировали не только функционал, но и дизайн."
+      },
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "Цена и была неадекватно завышена"
+      },
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "аппарат позиционируется, как топовое решение, а в итоге получаем банальную экономию производителя, ведь что произойдёт с временем работы, если увеличить до FHD?!"
+      },
+      {
+        "category": "performance",
+        "severity": 4,
+        "quote": "1 гб оперативки тоже прошлый век!"
+      },
+      {
+        "category": "software",
+        "severity": 3,
+        "quote": "Не надо рассказывать сказки про великолепную оптимизацию iOS, чудес на свете не бывает, этого мало."
+      },
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "больший по размерам Note 4 гораздо лучше лежит в руке и пользоваться им сподручнее."
+      }
+    ],
+    "competitor_mentions": [
+      "Note 4"
+    ]
+  },
+  {
+    "review_id": "3",
+    "brand": null,
+    "model": null,
+    "detalization": "cursory",
+    "issues": [],
+    "competitor_mentions": [
+      "5-ка"
+    ]
+  },
+  {
+    "review_id": "4",
+    "brand": null,
+    "model": null,
+    "detalization": "cursory",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "5",
+    "brand": "Apple",
+    "model": "6s",
+    "detalization": "cursory",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "6",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "design",
+        "severity": 1,
+        "quote": "но он без чехла скользкий"
+      },
+      {
+        "category": "software",
+        "severity": 1,
+        "quote": "Live photo - как по мне бред"
+      },
+      {
+        "category": "software",
+        "severity": 1,
+        "quote": "3D Touch - пока непривычно, часто вместо нажатия сильнее просто зажимаю, но думаю что освою"
+      },
+      {
+        "category": "software",
+        "severity": 2,
+        "quote": "В клавиатуре нельзя поместить курсор на середину слова."
+      },
+      {
+        "category": "software",
+        "severity": 2,
+        "quote": "Во многих группах вк пишет что контент запрещён, что ни делай."
+      },
+      {
+        "category": "software",
+        "severity": 3,
+        "quote": "Иногда при загрузке из аппстора повисает, спасает перезагрузка."
+      },
+      {
+        "category": "software",
+        "severity": 2,
+        "quote": "Отключаешь уведомления а он все равно вылезает."
+      },
+      {
+        "category": "price",
+        "severity": 3,
+        "quote": "Цена -жа,высокая,но не только на него, посмотрите на доллар."
+      },
+      {
+        "category": "design",
+        "severity": 1,
+        "quote": "айфон стал Попсовым телефоном, признаком роскоши и статуса"
+      }
+    ],
+    "competitor_mentions": [
+      "Android"
+    ]
+  },
+  {
+    "review_id": "7",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "8",
+    "brand": "Apple",
+    "model": "iPhone 6",
+    "detalization": "detailed",
+    "issues": [],
+    "competitor_mentions": [
+      "Android"
+    ]
+  },
+  {
+    "review_id": "9",
+    "brand": "Apple",
+    "model": "iPhone 6",
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "На Iphone 6 мало памяти для такой цены. ... реальная цена ему 20-25 тыс. Но никак не 32."
+      },
+      {
+        "category": "performance",
+        "severity": 3,
+        "quote": "Прилично греется в играх."
+      }
+    ],
+    "competitor_mentions": [
+      "Samsung Galaxy Alpha"
+    ]
+  },
+  {
+    "review_id": "10",
+    "brand": "Apple",
+    "model": "iPhone 6",
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "защитные стекла все идут не на весь экран а по краям значительное расстояние идет из-за скошенных углов"
+      },
+      {
+        "category": "battery",
+        "severity": 3,
+        "quote": "Батарею бы хотелось помощнее, увы она в шестерке тоже не фонтан"
+      },
+      {
+        "category": "design",
+        "severity": 4,
+        "quote": "алюминиевый корпус царапается в два счёта и при падении и при носке в кармане с ключами"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "11",
+    "brand": null,
+    "model": null,
+    "detalization": "cursory",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "12",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "Тонкий корпус с закругленными, ставшими узкими, гранями не особо обрадовал. В руках ощущается скользким, особенно когда надо добраться до верхнего края экрана."
+      },
+      {
+        "category": "software",
+        "severity": 2,
+        "quote": "При выводе списка абонентов при их прокручивании вниз экрана на самый последний невозможно нажать, он сразу прячется за нижний край."
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "13",
+    "brand": null,
+    "model": null,
+    "detalization": "cursory",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "14",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "cursory",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "15",
+    "brand": "Apple",
+    "model": "iPhone 6S",
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "performance",
+        "severity": 3,
+        "quote": "мне 64гб не хватает, так как уже на телефоне 10к фото, однако и эта проблема по своему решаема, можно купить Айклауд память аж на 2Т"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "16",
+    "brand": "Apple",
+    "model": "iPhone 6",
+    "detalization": "detailed",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "17",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "цена нынешняя пугает"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "18",
+    "brand": null,
+    "model": null,
+    "detalization": "cursory",
+    "issues": [
+      {
+        "category": "software",
+        "severity": 5,
+        "quote": "Проблемы чисто софтверные, и выражаются в явном неуважении компании к своим клиентам."
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "19",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "software",
+        "severity": 4,
+        "quote": "Музыку с ПК через iTunes так и не залили... строго по исполнителям, альбомам, годам - фиг вам."
+      },
+      {
+        "category": "software",
+        "severity": 3,
+        "quote": "Телефонная книга с gmail.com тоже не сразу правильно встала."
+      },
+      {
+        "category": "software",
+        "severity": 4,
+        "quote": "ОС телефона и софт заточены под выполнение строгих правил Apple."
+      }
+    ],
+    "competitor_mentions": [
+      "Motorola"
+    ]
+  },
+  {
+    "review_id": "20",
+    "brand": null,
+    "model": null,
+    "detalization": "cursory",
+    "issues": [
+      {
+        "category": "battery",
+        "severity": 3,
+        "quote": "Быстро садится батарея"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "21",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "battery",
+        "severity": 4,
+        "quote": "через месяц после того, как мы поменяли на новый, он стал менее автономным"
+      },
+      {
+        "category": "performance",
+        "severity": 4,
+        "quote": "не может обеспечить пользователю плавную работу смартфона"
+      },
+      {
+        "category": "price",
+        "severity": 3,
+        "quote": "за такие бешеные бабки"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "22",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "camera",
+        "severity": 3,
+        "quote": "фронтальная камера не оч"
+      },
+      {
+        "category": "performance",
+        "severity": 3,
+        "quote": "16 гб маловато для хранения всех фоток и видео"
+      },
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "корпус - уж очень он нежный,особенно при смене чехлов"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "23",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "cursory",
+    "issues": [],
+    "competitor_mentions": [
+      "Samsung Galaxy S7"
+    ]
+  },
+  {
+    "review_id": "24",
+    "brand": "Apple",
+    "model": "iPhone 6",
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "Адекватность цены - хм, цена завышена."
+      },
+      {
+        "category": "software",
+        "severity": 2,
+        "quote": "сниму балл за iTunes, хотя лично я привык."
+      }
+    ],
+    "competitor_mentions": [
+      "Xiaomi",
+      "Samsung"
+    ]
+  },
+  {
+    "review_id": "25",
+    "brand": "Apple",
+    "model": "iPhone 6",
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "люфтов"
+      },
+      {
+        "category": "camera",
+        "severity": 3,
+        "quote": "сползаний камер"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "26",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "cursory",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 3,
+        "quote": "Купил эту ошибку природы за 54990 рублей, лучше бы купил Yota Phone."
+      }
+    ],
+    "competitor_mentions": [
+      "Yota Phone"
+    ]
+  },
+  {
+    "review_id": "27",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "battery",
+        "severity": 5,
+        "quote": "Автономка реальная, около 2 часов экрана, или 10-12 часов умеренного использования."
+      },
+      {
+        "category": "performance",
+        "severity": 3,
+        "quote": "греется при самых простых задачах - типа проверить почту."
+      }
+    ],
+    "competitor_mentions": [
+      "5s"
+    ]
+  },
+  {
+    "review_id": "28",
+    "brand": "Apple",
+    "model": "iPhone 7",
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "software",
+        "severity": 3,
+        "quote": "сложности с синхронизацией (допустим историю переписки с того же WhatsApp он с гугловской учетки тянуть не хочет, когда ведроид спокойно вытаскивал."
+      }
+    ],
+    "competitor_mentions": [
+      "Samsung"
+    ]
+  },
+  {
+    "review_id": "29",
+    "brand": "Apple",
+    "model": "iPhone 6",
+    "detalization": "detailed",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "30",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "cursory",
+    "issues": [
+      {
+        "category": "software",
+        "severity": 2,
+        "quote": "Надо было подумать, как включить исчезнувший режим модема"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "31",
+    "brand": "Apple",
+    "model": "iPhone 6S",
+    "detalization": "cursory",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 3,
+        "quote": "Отличий 6 от 6S для пользователя реально нет!"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "32",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "реально не стоит это устройство 66т.р."
+      }
+    ],
+    "competitor_mentions": [
+      "HTC"
+    ]
+  },
+  {
+    "review_id": "33",
+    "brand": null,
+    "model": null,
+    "detalization": "cursory",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "34",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 2,
+        "quote": "Да, дорого. Но оно того стоит."
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "35",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "battery",
+        "severity": 2,
+        "quote": "Насчет батарейки, то это не телефон быстро ее разряжает, а использование 3G и LTE."
+      },
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "Если чтобы купить его, вам нужно копить деньги несколько месяцев, не покупайте iPhone!"
+      },
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "Особенно жаль тех девочек, которые долго копили или выпрашивали данный кирпич, а потом случайно уронили и разбили стекло, и так и ходят с разбитым"
+      }
+    ],
+    "competitor_mentions": [
+      "Android phones"
+    ]
+  },
+  {
+    "review_id": "36",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 3,
+        "quote": "конечная стоимость высоковата, учитывая, что американцам он как стоил эти 700 баксов, так и стоит"
+      },
+      {
+        "category": "software",
+        "severity": 2,
+        "quote": "после обновлений 8.0.1 и 8.0.2 многие баги уйдут"
+      },
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "увеличение дисплея для меня и плюс и минус. Осень/зима по Москве особо не поездишь, в метро одной рукой уже не до каждого угла экрана достанешь."
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "37",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "цена кусается. Более 30000 рублей!"
+      }
+    ],
+    "competitor_mentions": [
+      "iPhone SE",
+      "iPhone 6s",
+      "iPhone 7"
+    ]
+  },
+  {
+    "review_id": "38",
+    "brand": "SONY",
+    "model": null,
+    "detalization": "cursory",
+    "issues": [
+      {
+        "category": "design",
+        "severity": 4,
+        "quote": "после покупки пришлось на ремонт отдать. Разговорный микрофон заменить."
+      },
+      {
+        "category": "battery",
+        "severity": 3,
+        "quote": "На день зарядки еле хватает."
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "39",
+    "brand": "Sony",
+    "model": null,
+    "detalization": "detailed",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "40",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 2,
+        "quote": "Насчёт наушников и адаптера для быстрой зарядки скорее придирки, мне это не критично, но согласитесь, было бы приятно видеть всё это из коробки, когда 40к выкладываешь за телефон."
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "41",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "battery",
+        "severity": 3,
+        "quote": "Батарею держит в среднем около суток - маловато"
+      },
+      {
+        "category": "software",
+        "severity": 2,
+        "quote": "Прошивка с мелкими багами"
+      },
+      {
+        "category": "camera",
+        "severity": 2,
+        "quote": "Камера снимает не плохо, но могла бы и лучше - опять же проблема ПО."
+      }
+    ],
+    "competitor_mentions": [
+      "z3 compact"
+    ]
+  },
+  {
+    "review_id": "42",
+    "brand": "Sony",
+    "model": "Xperia XZ1",
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "software",
+        "severity": 2,
+        "quote": "Нет быстрого доступа к калькулятору и фото экрана."
+      }
+    ],
+    "competitor_mentions": [
+      "Samsung A8",
+      "iPhone"
+    ]
+  },
+  {
+    "review_id": "43",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "design",
+        "severity": 4,
+        "quote": "Аппарыты выпущеные в продажу не проработаны и плохо продуманы, появилось много косяков недопустимые для аппарата такой компании"
+      },
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "Вы либо качество поднимите, либо цену снизьте"
+      }
+    ],
+    "competitor_mentions": [
+      "Android"
+    ]
+  },
+  {
+    "review_id": "44",
+    "brand": "Apple",
+    "model": null,
+    "detalization": "cursory",
+    "issues": [],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "45",
+    "brand": "Apple",
+    "model": "iPhone 6",
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "Стоит ли покупать аппарат за 650$ для звонков, (с)ебяшек и сидения вконтактике? ОДНОЗНАЧНО НЕТ."
+      },
+      {
+        "category": "performance",
+        "severity": 2,
+        "quote": "1 Гб оперативки + А8 - за глаза. Если любите меряться пис... эээ, гигабайтами - аппарат не для вас."
+      },
+      {
+        "category": "design",
+        "severity": 2,
+        "quote": "Привыкнув к четким граням iPhone начиная с 4го, шестерка кажется какой-то 'неайфонной', что ли."
+      }
+    ],
+    "competitor_mentions": [
+      "Android"
+    ]
+  },
+  {
+    "review_id": "46",
+    "brand": null,
+    "model": null,
+    "detalization": "cursory",
+    "issues": [
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "Качество сборки на уровне дешевых аппаратов."
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "47",
+    "brand": "Apple",
+    "model": "iPhone 6",
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 4,
+        "quote": "из 16 гб всего доступно 11 это даже не смешно"
+      },
+      {
+        "category": "design",
+        "severity": 3,
+        "quote": "пиксельную сетку видно невооруженным глазом"
+      },
+      {
+        "category": "camera",
+        "severity": 3,
+        "quote": "При слабом освещении много шумов"
+      },
+      {
+        "category": "performance",
+        "severity": 3,
+        "quote": "Прилично греется в играх"
+      },
+      {
+        "category": "software",
+        "severity": 2,
+        "quote": "айтюнс... так и не могу привыкнуть"
+      }
+    ],
+    "competitor_mentions": [
+      "Samsung Note 1",
+      "Samsung Note 2",
+      "Sony Z1 Compact",
+      "LG G3"
+    ]
+  },
+  {
+    "review_id": "48",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "price",
+        "severity": 2,
+        "quote": "цена, конечно, высока"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "49",
+    "brand": null,
+    "model": null,
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "battery",
+        "severity": 2,
+        "quote": "не сказал бы, чтобы плохо держит батарею, но и не могу сказать, что держит долго"
+      }
+    ],
+    "competitor_mentions": []
+  },
+  {
+    "review_id": "50",
+    "brand": "Apple",
+    "model": "iPhone 6",
+    "detalization": "detailed",
+    "issues": [
+      {
+        "category": "software",
+        "severity": 3,
+        "quote": "Допилят софт и будет то, что надо"
+      },
+      {
+        "category": "battery",
+        "severity": 2,
+        "quote": "до LG G3 не дотягивает"
+      }
+    ],
+    "competitor_mentions": [
+      "HTC ONE",
+      "LG G3",
+      "Blackberry",
+      "Nokia"
+    ]
+  }
+]
