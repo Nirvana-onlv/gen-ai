@@ -111,7 +111,6 @@ def autodiscovery(select_reviews: list[str], aspects_res: list) -> None:
     for a in discovered.aspects:
         print(f"  • {a.name} — {a.description}")
 
-    # Шаг 2 — классифицируем каждый отзыв по найденным темам
     dynamic_aspects_block = "\n".join(
         f"- {a.name}: {a.description}" for a in discovered.aspects
     )
