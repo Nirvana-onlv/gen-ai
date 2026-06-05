@@ -17,45 +17,46 @@ from __future__ import annotations
 
 from typing import Literal, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 # ══════════════════════════════════════════════════════════
 # Раунд 1 — Information Extraction
 # ══════════════════════════════════════════════════════════
-class Concern(BaseModel):
-    category: Literal["price", "speed", "ux", "support", "feature"]
+class Issue(BaseModel):
+    category: Literal["battery", "camera", "performance", "design", "price", "software"]
     severity: int = Field(ge=1, le=5)
     quote: str
 
 
-class Participant(BaseModel):
-    name: str
-    age: Optional[int] = None
-    city: str
-    occupation: str
-    concerns: list[Concern]
+class Review(BaseModel):
+    review_id: Optional[str] = None
+    brand: Optional[str] = None
+    model: Optional[str] = None
+    detalization: Literal["cursory", "detailed", "unclear"]
+    issues: list[Issue]
     competitor_mentions: list[str] = Field(default_factory=list)
 
-
-class MatchVerdict(BaseModel):
-    matched: bool
-    matched_index: int = Field(default=-1, description="номер жалобы или -1")
-    reason: str = ""
+    @field_validator("detalization")
+    @classmethod
+    def validate_sentiment(cls, value):
+        if value not in ["cursory", "detailed", "unclear"]:
+            raise ValueError("sentiment should be one of 'cursory', 'detailed', 'unclear'")
+        return value
 
 
 # ══════════════════════════════════════════════════════════
 # Раунд 2 — Аспектный анализ
 # ══════════════════════════════════════════════════════════
 class AspectSentiment(BaseModel):
-    aspect: Literal["price", "speed", "ux", "support", "feature"]
+    aspect: Literal["battery", "camera", "performance", "design", "price", "software"]
     sentiment: Literal["positive", "negative", "neutral"]
     quote: str
     confidence: float = Field(ge=0, le=1)
 
 
-class ParticipantSentiment(BaseModel):
-    name: str
+class ReviewSentiment(BaseModel):
+    review_id: str
     aspects: list[AspectSentiment]
 
 
@@ -63,7 +64,7 @@ class ParticipantSentiment(BaseModel):
 # Раунд 2.5 — Autodiscovery аспектов
 # ══════════════════════════════════════════════════════════
 class DiscoveredAspect(BaseModel):
-    name: str
+    name: str = Field(min_length=3)
     description: str = Field(min_length=5)
 
 
@@ -78,8 +79,8 @@ class DynamicAspect(BaseModel):
     confidence: float = Field(ge=0, le=1)
 
 
-class DynamicParticipant(BaseModel):
-    name: str
+class DynamicReview(BaseModel):
+    review_id: str
     aspects: list[DynamicAspect]
 
 
@@ -87,24 +88,15 @@ class DynamicParticipant(BaseModel):
 # Раунд 3 — Map-Reduce-резюме
 # ══════════════════════════════════════════════════════════
 class ChunkSummary(BaseModel):
-    speaker: str
+    review_ids: list[str]
     key_points: list[str] = Field(min_length=1, max_length=6)
     sentiment: Literal["positive", "negative", "mixed"]
 
 
-class DiscussionSummary(BaseModel):
+class ReviewSummary(BaseModel):
     headline: str
     key_findings: list[str] = Field(min_length=2, max_length=8)
     action_items: list[str] = Field(min_length=1, max_length=8)
-
-
-# ══════════════════════════════════════════════════════════
-# Раунд 3.5 — Иерархический Map-Reduce
-# ══════════════════════════════════════════════════════════
-class GroupSummary(BaseModel):
-    speakers: list[str]
-    themes: list[str] = Field(min_length=1, max_length=6)
-    overall_sentiment: Literal["positive", "negative", "mixed"]
 
 
 # ══════════════════════════════════════════════════════════
@@ -122,11 +114,3 @@ class JudgeReport(BaseModel):
     overall_score: float = Field(ge=0, le=1)
     summary: str
 
-
-# ══════════════════════════════════════════════════════════
-# Раунд 7 — Multi-doc сводка
-# ══════════════════════════════════════════════════════════
-class MultiDocSummary(BaseModel):
-    common_themes: list[str] = Field(min_length=1, max_length=8)
-    unique_per_bank: dict[str, list[str]]
-    overall_headline: str
