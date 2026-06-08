@@ -26,10 +26,24 @@ from rank_bm25 import BM25Okapi
 from schema import RAGAnswer
 
 # Блок 1 — наивный RAG: ответ модели идёт обычным текстом
-# client = make_raw_client()
 client = make_client()
 MODEL = get_model()
 chroma = chromadb.PersistentClient(path="./chroma_db")
+
+TOP_K = 5
+FIXED_SIZE = 2000
+
+DATA_DIR = Path(__file__).parent / "wiki_data"
+BM25_CACHE_FIXED = Path(__file__).parent / "bm25_cache_fixed.json"
+BM25_CACHE_REC   = Path(__file__).parent / "bm25_cache_rec.json"
+
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size=512, chunk_overlap=80, separators=["\n\n", "\n", ". ", "? ", "! ", " "]
+)
+
+# ─────────────────────────────────────────────────
+# Chroma + эмбеддер
+# ─────────────────────────────────────────────────
 
 print("Загружаю эмбеддер...", flush=True)
 _t_embed = time.time()
@@ -37,101 +51,95 @@ EMBED_FN = embedding_functions.SentenceTransformerEmbeddingFunction(
     model_name="paraphrase-multilingual-MiniLM-L12-v2",
 )
 print(f"Эмбеддер готов за {time.time() - _t_embed:.1f}с", flush=True)
-collection = chroma.get_or_create_collection(
-    name="focus_groups",
+
+collection_fixed = chroma.get_or_create_collection(
+    name="history_fixed",
     embedding_function=EMBED_FN,
     metadata={"hnsw:space": "cosine"},
 )
 
-DATA_DIR = Path(__file__).parent / "data"
-BM25_CACHE = Path(__file__).parent / "bm25_cache.json"
-
-
-splitter = RecursiveCharacterTextSplitter(
-    chunk_size=512, chunk_overlap=80, separators=["\n\n", "\n", ". ", "? ", "! ", " "]
+collection_rec = chroma.get_or_create_collection(
+    name="history_recursive",
+    embedding_function=EMBED_FN,
+    metadata={"hnsw:space": "cosine"},
 )
 
+# ─────────────────────────────────────────────────
+# Токенизация
+# ─────────────────────────────────────────────────
 
 def tokenize_ru(text: str):
-    "Нормализация текста: приведение к нижнему регистру"
     return re.findall(r"[а-яa-z0-9ё-]{2,}", text.lower())
 
 
-def chunk_text(text: str):
-    "Разбивка текста на кусочки рекурсивным сплиттером"
+def chunk_text_fixed(text: str, size: int = FIXED_SIZE) -> list[str]:
+    return [text[i: i + size] for i in range(0, len(text), size) if text[i:i + size].strip()]
+
+
+def chunk_text_recursive(text: str) -> list[str]:
     return [c.strip() for c in splitter.split_text(text) if c.strip()]
 
 
-# фиксированный чанкинг по символам
-def chunk_text_naive(text: str, chunk_size: int = 2000) -> list[str]:
-    """
-    Примитивная нарезка: рубим каждые N символов.
-    Проблема: граница может попасть в середину фразы «я ругался на |
-    скорость» — и на запрос «скорость» не найдётся чанк про недовольство.
-    """
-    return [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
-
-
-# заполнение векторного хранилища: читаем data/, режем, кладём в ChromaDB
-def ingest():
-    # Чистим старую коллекцию перед переиндексацией
-    existing = collection.get()
+def _clear_collection(col):
+    existing = col.get()
     if existing["ids"]:
-        collection.delete(ids=existing["ids"])
+        col.delete(ids=existing["ids"])
 
-    all_chunks = []
-    all_ids = []
-    all_meta = []
 
+def ingest():
+    _clear_collection(collection_fixed)
+    _clear_collection(collection_rec)
+
+    all_chunks_rec = []
+    all_ids_rec = []
+    all_chunks_fixed = []
+    all_ids_fixed = []
+
+
+    # Стратегия 1 - разбиение на фиксированные чанки
     for f in sorted(DATA_DIR.glob("*.txt")):
         text = f.read_text(encoding="utf-8")
-        chunks = chunk_text(text)
-
-        for i, c in enumerate(chunks):
-            cid = f"{f.stem}__{i}"
-            all_chunks.append(c)
-            all_ids.append(cid)
-            all_meta.append({"source": f.stem, "chunk_id": i})
-
+        chunks = chunk_text_fixed(text)
+        ids    = [f"{f.stem}__fixed_{i}" for i in range(len(chunks))]
+        metas  = [{"source": f.stem, "strategy": "fixed"} for _ in chunks]
+        collection_fixed.add(documents=chunks, ids=ids, metadatas=metas)
+        all_chunks_fixed.extend(chunks)
+        all_ids_fixed.extend(ids)
         print(f"  {f.stem}: {len(chunks)} чанков")
 
-    collection.add(documents=all_chunks, ids=all_ids, metadatas=all_meta)
+    # Стратегия 2 - рекурсивное разбиение
+    for f in sorted(DATA_DIR.glob("*.txt")):
+        text = f.read_text(encoding="utf-8")
+        chunks = chunk_text_recursive(text)
+        ids = [f"{f.stem}__rec_{i}" for i in range(len(chunks))]
+        metas = [{"source": f.stem, "strategy": "recursive"} for _ in chunks]
+        collection_rec.add(documents=chunks, ids=ids, metadatas=metas)
+        all_chunks_rec.extend(chunks)
+        all_ids_rec.extend(ids)
+        print(f"  {f.stem}: {len(chunks)} чанков")
 
-    bm25_data = {
-        "ids": all_ids,
-        "tokens": [tokenize_ru(c) for c in all_chunks],
-        "texts": all_chunks,
-    }
-    BM25_CACHE.write_text(json.dumps(bm25_data, ensure_ascii=False))
+    for cache_path, ids_list, chunks_list in [
+        (BM25_CACHE_FIXED, all_ids_fixed, all_chunks_fixed),
+        (BM25_CACHE_REC, all_ids_rec, all_chunks_rec),
+    ]:
+        bm25_data = {"ids": ids_list, "tokens": [tokenize_ru(c) for c in chunks_list], "texts": chunks_list}
+        cache_path.write_text(json.dumps(bm25_data, ensure_ascii=False), encoding="utf-8")
 
-    total = collection.count()
-    print(
-        f"\nИндексировано: Dense — {total} чанков из {len(list(DATA_DIR.glob('*.txt')))} файлов"
-    )
-    print(f"\nBM25 — {len(all_ids)} чанков кэшировано в {BM25_CACHE.name}")
-
-
-def _load_bm25():
-    data = json.loads(BM25_CACHE.read_text())
+def _load_bm25(cache_path: Path):
+    data = json.loads(cache_path.read_text(encoding="utf-8"))
     bm25 = BM25Okapi(data["tokens"])
     return bm25, data["ids"], data["texts"]
 
-
-# Retrieve + generate
-def retrieve(query: str, k: int = 5) -> dict:
-    """Dense-поиск в ChromaDB."""
+def dense_retrieve(query: str, collection, k: int = TOP_K) -> dict:
     return collection.query(query_texts=[query], n_results=k)
 
 
-def hybrid_retrieve(query: str, k: int = 5, top: int = 15, c: int = 60) -> dict:
-    """Hybrid-поиск контекста."""
-
-    # семантический поиск
+def hybrid_retrieve(query: str, collection, k: int = 5, top: int = 15, c: int = 60) -> dict:
     dense = collection.query(query_texts=[query], n_results=top)
     dense_ids = dense["ids"][0]
 
-    # tf-idf поиск
-    bm25, bm25_ids, bm25_texts = _load_bm25()
+    cache_path = BM25_CACHE_FIXED if collection.name == "history_fixed" else BM25_CACHE_REC
+    bm25, bm25_ids, bm25_texts = _load_bm25(cache_path)
     tokens = tokenize_ru(query)
     scores = bm25.get_scores(tokens)
 
@@ -140,7 +148,6 @@ def hybrid_retrieve(query: str, k: int = 5, top: int = 15, c: int = 60) -> dict:
     ]
     sparse_ids = [bm25_ids[i] for i in bm25_order]
 
-    # reciprocal rank fusion для совмещения результатов выдачи двух методов поиска
     rrf = {}
     for rank, cid in enumerate(dense_ids):
         rrf[cid] = rrf.get(cid, 0.0) + 1.0 / (c + rank)
@@ -165,15 +172,9 @@ def build_prompt(query: str, hits: dict) -> str:
     ids = hits["ids"][0]
     ctx = "\n\n---\n\n".join(f"[{i}]\n{d}" for i, d in zip(ids, docs))
     return (
-        "Ты отвечаешь на вопрос продакта по архиву фокус-групп. "
+        "Ты отвечаешь на вопрос по истории России. "
         "Опирайся ТОЛЬКО на контекст ниже. Если в контексте нет ответа — "
-        "скажи об этом прямо. Перечисли имена участников.\n\n"
-        "Правила:\n"
-        "1. Опирайся ТОЛЬКО на контекст ниже. Не добавляй факты из общего знания.\n"
-        "2. В `quotes` — 1-5 точных коротких цитат (НЕ пересказ), с именами.\n"
-        "3. В `sources` — id блоков, откуда взяты цитаты (формат: 'tbank_egor__0').\n"
-        "4. В `confidence` — честная оценка: 0.9+ ТОЛЬКО когда прямой ответ в контексте,"
-        "0.5-0.8, если собран из несколььких кусков, < 0.5 — если контекст не отвечает на запрос.\n\n"
+        "скажи об этом прямо.\n\n"
         f"Контекст:\n{ctx}\n\n"
         f"Вопрос: {query}\n\n"
         "Ответ:"
@@ -181,35 +182,20 @@ def build_prompt(query: str, hits: dict) -> str:
 
 
 def ask(query: str):
-    # Эмбеддим запрос и ищем топ-5 в Chroma.
-    print("Поиск по базе...", flush=True)
+    print("Гибридный поиск...", flush=True)
     t0 = time.time()
-    hits = hybrid_retrieve(query, k=15)
-    found = hits["ids"][0]
-    print(
-        f"   нашёл {len(found)} чанков за {time.time() - t0:.1f}с: {', '.join(found)}",
-        flush=True,
-    )
+    hits = hybrid_retrieve(query, collection_rec, k=5)
+    ids = hits["ids"][0]
+    print(f"  нашёл {len(ids)} чанков за {time.time() - t0:.1f}с: {', '.join(ids)}", flush=True)
 
-    # Кладём найденное в промпт, спрашиваем модель.
-    print("Генерация ответа...", flush=True)
-    t1 = time.time()
     prompt = build_prompt(query, hits)
-    resp: RAGAnswer = client.chat.completions.create(
-        model=MODEL,
-        response_model=RAGAnswer,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.2,
-    )
-    print(f"   ответ за {time.time() - t1:.1f}с", flush=True)
 
     print("\n" + "=" * 60)
     print(f"ВОПРОС: {query}")
     print("=" * 60)
-    print(resp)
-    print("\n--- источники ---")
-    for i in found:
-        print(f"  {i}")
+    print("Найденные фрагменты:")
+    for cid, doc in zip(hits["ids"][0], hits["documents"][0]):
+        print(f"\n  [{cid}]\n  {doc[:200]}...")
 
 
 if __name__ == "__main__":
