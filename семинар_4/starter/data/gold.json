@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "question": "Кто жаловался на push-уведомления?",
+    "type": "прямой",
+    "gold_sources": ["olymp_anna", "tinkoff_alex", "tinkoff_lyuba"],
+    "note": "слово «пуш» / «push» в явном виде"
+  },
+  {
+    "id": 2,
+    "question": "Кто ругался на скорость приложения?",
+    "type": "синоним",
+    "gold_sources": ["olymp_sergey", "tinkoff_alex", "tinkoff_lyuba"],
+    "note": "слова «лагает», «тормозит», «крутится долго» — синонимы «скорости»"
+  },
+  {
+    "id": 3,
+    "question": "Кто упомянул тариф «Корпоратив»?",
+    "type": "точный артикул",
+    "gold_sources": ["tinkoff_alex", "tinkoff_pavel", "tinkoff_timur"],
+    "note": "dense теряет, BM25 находит"
+  },
+  {
+    "id": 4,
+    "question": "Кто жаловался одновременно и на цену, и на скорость?",
+    "type": "multi-hop",
+    "gold_sources": ["brightword_dmitry"],
+    "note": "Дмитрий: 1800 за урок дорого + видеокомната подвисает. Одно-проход RAG не соберёт оба сигнала от одного участника."
+  },
+  {
+    "id": 5,
+    "question": "Кто упомянул ФЗ-152?",
+    "type": "точный артикул",
+    "gold_sources": ["tinkoff_maria"],
+    "note": "юридический термин, dense может размыть"
+  },
+  {
+    "id": 6,
+    "question": "Кто был недоволен интерфейсом?",
+    "type": "синоним",
+    "gold_sources": ["olymp_olga", "brightword_viktor", "brightword_alina"],
+    "note": "Ольга: «меняется без предупреждения», Виктор: «я бы убрал из интерфейса всё», Алина: «дизайн карточек устарел»"
+  },
+  {
+    "id": 7,
+    "question": "Кто хвалил поддержку?",
+    "type": "позитив",
+    "gold_sources": ["tinkoff_kirill", "tinkoff_pavel", "brightword_polina"],
+    "note": "Кирилл: «поддержка — отдельный ромб», Павел: «решили за полчаса», Полина: «отвечает в течение часа»"
+  },
+  {
+    "id": 8,
+    "question": "У кого были технические проблемы с оплатой или переводом?",
+    "type": "перефраз",
+    "gold_sources": ["olymp_igor", "olymp_maksim", "brightword_polina"],
+    "note": "Игорь: деньги зависли на двое суток, Максим: крах в метро, Полина: двойное списание"
+  },
+  {
+    "id": 9,
+    "question": "Кто одновременно пользуется Т-Банком и «Олимпом»?",
+    "type": "multi-hop cross-collection",
+    "gold_sources": ["olymp_darya", "tinkoff_alex", "tinkoff_lyuba"],
+    "note": "требует связать упоминания обоих банков в одном транскрипте"
+  },
+  {
+    "id": 10,
+    "question": "Кто упомянул СБП?",
+    "type": "точный артикул",
+    "gold_sources": ["olymp_anna", "olymp_maksim", "tinkoff_kirill"],
+    "note": "аббревиатура, BM25 находит мгновенно"
+  }
+]
