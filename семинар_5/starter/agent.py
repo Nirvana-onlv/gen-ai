@@ -21,6 +21,7 @@ import argparse
 import datetime
 import json
 import sys
+import uuid
 from concurrent.futures import ThreadPoolExecutor
 from json.decoder import JSONDecodeError
 from pathlib import Path
@@ -32,7 +33,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from llm_client import get_model, make_client, make_raw_client
 from schemas import TOOL_SCHEMAS
-from tools import calculate, get_fx_rate, get_inflation, get_key_rate, get_unemployment
+from tools import calculate, compare_periods, get_fx_rate, get_inflation, get_key_rate, get_unemployment
 
 # набор инструментов
 TOOLS_IMPL = {
@@ -41,8 +42,10 @@ TOOLS_IMPL = {
     "get_inflation": get_inflation,
     "get_unemployment": get_unemployment,
     "calculate": calculate,
+    "compare_periods": compare_periods,
 }
 
+TRACE_PATH = Path(__file__).resolve().parent / "trace.jsonl"
 
 # блок 7 — структурированный ответ
 class AgentAnswer(BaseModel):
@@ -136,6 +139,16 @@ SYSTEM_PROMPT_PRO = (
 Формат даты — YYYY-MM-DD.
 """
 )
+
+def _write_trace(run_id: str, step: int, entry: dict) -> None:
+    record = {
+        "run_id": run_id,
+        "ts": datetime.datetime.now().isoformat(timespec="seconds"),
+        "step": step,
+        **entry,
+    }
+    with open(TRACE_PATH, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 def _exec_one(tc, cache: Optional[dict] = None) -> tuple[Any, dict, dict]:
@@ -252,6 +265,8 @@ def run_agent(
     verbose: bool = True,
 ) -> dict[str, Any]:
     """ReAct-цикл. базовый режим — финал текстом; флаги включают блоки 6-10."""
+    run_id = str(uuid.uuid4())
+
     client = make_raw_client()
     model = get_model()
     tools = TOOL_SCHEMAS + ([SUBMIT_SCHEMA] if structured else [])
@@ -294,7 +309,9 @@ def run_agent(
             print(f"[step {step}] {names or 'финал-текст'}")
 
         if not msg.tool_calls:
+            entry = {"final": msg.content}
             trace.append({"step": step, "final": msg.content})
+            _write_trace(run_id, step, entry)
             return _finish(
                 {
                     "answer": msg.content,
@@ -328,9 +345,11 @@ def run_agent(
                         "content": json.dumps(obs, ensure_ascii=False),
                     }
                 )
+                entry = {"call": tc.function.name, "args": args, "obs": obs}
                 trace.append(
                     {"step": step, "call": tc.function.name, "args": args, "obs": obs}
                 )
+                _write_trace(run_id, step, entry)
                 if verbose:
                     print(
                         f"    {tc.function.name}({args}) -> {json.dumps(obs, ensure_ascii=False)[:140]}"

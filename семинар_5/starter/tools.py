@@ -289,3 +289,81 @@ def calculate(expression: str) -> dict:
         return {"expression": expression, "result": round(val, 6)}
     except Exception as e:
         return {"error": f"{type(e).__name__}: {e}"}
+
+
+# ===========================================================================
+# 5. Сравнение двух периодов (ДЗ, задание 1)
+# ===========================================================================
+
+def compare_periods(
+    metric: str,
+    period_a: str,
+    period_b: str,
+) -> dict:
+    """
+    Сравнить значение метрики в двух периодах.
+
+    Возвращает:
+      {"metric": ...,
+       "a": {"date": ..., "value": ...},
+       "b": {"date": ..., "value": ...},
+       "delta": b.value - a.value,
+       "ratio": b.value / a.value,
+       "source": "..."}
+    """
+    ALLOWED = {"key_rate", "fx_USD", "fx_EUR", "fx_CNY", "cpi", "unemployment"}
+    if metric not in ALLOWED:
+        return {"error": f"Неизвестная метрика: {metric!r}. Допустимы: {sorted(ALLOWED)}"}
+
+    def _fetch(period: str) -> tuple[str, float, str]:
+        raw_period = period
+        if re.match(r"^\d{4}-\d{2}$", period):
+            period = period + "-01"
+
+        d = _parse_date(period)
+        year, month = d.year, d.month
+
+        if metric == "key_rate":
+            res = get_key_rate(on_date=d.isoformat())
+            if "error" in res:
+                raise ValueError(res["error"])
+            return res["date"], res["rate"], res["source"]
+
+        elif metric.startswith("fx_"):
+            currency = metric[3:]
+            res = get_fx_rate(currency=currency, on_date=d.isoformat())
+            if "error" in res:
+                raise ValueError(res["error"])
+            return res["date"], res["rate"], res["source"]
+
+        elif metric == "cpi":
+            res = get_inflation(year=year, month=month)
+            if "error" in res:
+                raise ValueError(res["error"])
+            return f"{year}-{month:02d}", res["cpi_yoy"], res["source"]
+
+        elif metric == "unemployment":
+            res = get_unemployment(year=year, month=month)
+            if "error" in res:
+                raise ValueError(res["error"])
+            return f"{year}-{month:02d}", res["unemployment"], res["source"]
+
+        raise ValueError(f"Непредвиденная метрика: {metric}")
+
+    try:
+        date_a, val_a, src_a = _fetch(period_a)
+        date_b, val_b, src_b = _fetch(period_b)
+    except ValueError as e:
+        return {"error": str(e)}
+
+    delta = round(val_b - val_a, 6)
+    ratio = round(val_b / val_a, 6) if val_a != 0 else None
+
+    return {
+        "metric": metric,
+        "a": {"date": date_a, "value": val_a},
+        "b": {"date": date_b, "value": val_b},
+        "delta": delta,
+        "ratio": ratio,
+        "source": f"{src_a} / {src_b}",
+    }

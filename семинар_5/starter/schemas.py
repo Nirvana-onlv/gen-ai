@@ -124,4 +124,55 @@ TOOL_SCHEMAS = [
             },
         },
     },
+    {
+        "type": "function",
+        "function": {
+            "name": "compare_periods",
+            "description": (
+                "Сравнить значение макроэкономической метрики в двух периодах: "
+                "вычисляет абсолютное изменение (delta) и отношение (ratio = B/A). "
+                "Используй для вопросов вида «во сколько раз вырос», «как изменился», "
+                "«сравни X в период A и период B». "
+                "Внутри использует get_fx_rate / get_key_rate / get_inflation / get_unemployment."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "metric": {
+                        "type": "string",
+                        "enum": [
+                            "key_rate",
+                            "fx_USD",
+                            "fx_EUR",
+                            "fx_CNY",
+                            "cpi",
+                            "unemployment",
+                        ],
+                        "description": (
+                            "Метрика для сравнения: "
+                            "key_rate — ключевая ставка ЦБ; "
+                            "fx_USD/fx_EUR/fx_CNY — курс доллара/евро/юаня к рублю; "
+                            "cpi — инфляция г/г по Росстату; "
+                            "unemployment — безработица по Росстату."
+                        ),
+                    },
+                    "period_a": {
+                        "type": "string",
+                        "description": (
+                            "Первый (базовый) период в формате YYYY-MM или YYYY-MM-DD. "
+                            "Например: '2022-01' или '2022-01-10'."
+                        ),
+                    },
+                    "period_b": {
+                        "type": "string",
+                        "description": (
+                            "Второй (сравниваемый) период в формате YYYY-MM или YYYY-MM-DD. "
+                            "Например: '2026-04' или '2026-04-22'."
+                        ),
+                    },
+                },
+                "required": ["metric", "period_a", "period_b"],
+            },
+        },
+    },
 ]
