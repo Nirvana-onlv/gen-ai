@@ -28,8 +28,10 @@ SYSTEM_PROMPT = """\
 - calculate(expression): безопасный калькулятор.
 
 ПРАВИЛА:
-1. TODO (блок 1): добавь правило про арифметику и calculate. Без
-   него модель будет считать в уме — ошибка класса C.
+1. Любую арифметику (разность, отношение, произведение, процент, деление)
+   над числами, полученными от инструментов, ВСЕГДА оформляй отдельным
+   подвопросом с expected_tools=["calculate"]. Никогда не считай в уме и
+   не включай арифметику в подвопросы с другими инструментами.
 2. Если подвопрос N зависит от ответа подвопроса K — поставь K в depends_on.
 3. Для вопросов про «последний доступный период» — первым шагом поставь
    подвопрос «узнать доступный период».
@@ -39,8 +41,16 @@ SYSTEM_PROMPT = """\
 Цель — минимальный корректный план.
 """
 
+FAKE_TOOLS_HINT = """\
 
-def planner(question: str, *, feedback: str | None = None) -> Plan:
+Также доступны специализированные инструменты:
+- get_real_rate(on_date): реальная ключевая ставка с поправкой на инфляцию.
+- get_cumulative_inflation(from_date, to_date): накопленная инфляция за период.
+- get_real_fx_rate(currency, from_date, to_date): реальный курс валюты с поправкой на инфляцию.
+"""
+
+
+def planner(question: str, *, feedback: str | None = None, hint_fake_tools: bool = False) -> Plan:
     """Вернуть План для исходного вопроса.
 
     Args:
@@ -51,17 +61,13 @@ def planner(question: str, *, feedback: str | None = None) -> Plan:
     """
     client = make_client()
     messages: list[dict] = [
-        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "system", "content": SYSTEM_PROMPT + (FAKE_TOOLS_HINT if hint_fake_tools else "")},
         {"role": "user", "content": question},
     ]
 
-    # TODO (блок 1.2): если feedback is not None — добавь ещё одно
-    #                  пользовательское сообщение со словами
-    #                  «Предыдущая попытка не прошла, замечание: {feedback}».
-    #
     if feedback:
         messages.append(
-            {"user": f"Предыдущая попытка не прошла проверку. Замечание: {feedback}"}
+            {"role": "user", "content": f"Предыдущая попытка не прошла проверку. Замечание: {feedback}"}
         )
 
     return client.chat.completions.create(

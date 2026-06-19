@@ -60,16 +60,11 @@ def critic(
         plan_lines.append(f"  {sq.id}. [{tools}]{deps}  «{sq.question}»")
     plan_text = "\n".join(plan_lines) or "  (пустой план)"
 
-    # TODO (блок 3.1): собрать answers_text из answers.
-    # ОБЯЗАТЕЛЬНО передаём ТОЛЬКО answer + used_tools, НЕ raw_trace!
-    # Иначе Критик начнёт подсматривать и соглашаться с Исполнителем.
-    # Формат строки: "  <id>. [tool1,tool2] <answer>"
-
     ans_lines = []
     for sq_id in sorted(answers):
         a = answers[sq_id]
         tools = ",".join(a.used_tools) or "—"
-        ans_lines.append(f"  {sq.id}. [{tools}] {a.answer}")
+        ans_lines.append(f"  {sq_id}. [{tools}] {a.answer}")
 
     answers_text = "\n".join(ans_lines) or "(ответов нет)"
 
@@ -85,7 +80,6 @@ def critic(
             }
         ],
         response_model=Verdict,
-        # TODO (блок 3.2): поставь temperature=0.7 (не 0.0).
         temperature=0.7,
         max_retries=2,
     )

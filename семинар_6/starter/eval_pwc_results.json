@@ -2,8 +2,8 @@
   {
     "id": "Q1",
     "query": "Во сколько раз USD подорожал с 1 января 2022 по сегодня?",
-    "comment": "Класс ошибки C: одиночный часто считает в уме, не зовёт calculate. PWC должен починить — Planner обязан добавить calculate-подвопрос.",
-    "n": 1,
+    "comment": "Класс ошибки C: одиночный часто считает в уме, не зовёт calculate. PWC должен починить — Планировщик обязан добавить calculate-подвопрос.",
+    "n": 5,
     "single": {
       "runs": [
         {
@@ -15,10 +15,54 @@
           "hallucinated": [],
           "must_have_ok": true,
           "arith_without_calc": false,
-          "answer_preview": "Курс доллара США **не подорожал, а подешевел** за этот период.\n\nНа 1 января 2022 года курс USD составлял **74,29 ₽**, а на сегодня (15 июня 2026) — **71,91 ₽**. Таким образом, долл"
+          "answer_preview": "На 1 января 2022 года курс USD составлял **74,29 ₽**, а на сегодня (18 июня 2026) — **72,75 ₽**. Таким образом, вопреки ожиданиям, доллар не подорожал, а **подешевел**: его курс со"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Курс доллара США на 1 января 2022 года составлял **74,29 руб.**, а на сегодня (18 июня 2026 года) — **72,75 руб.** Получается, что USD не подорожал, а **подешевел** примерно в **0,"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Доллар с 1 января 2022 года по сегодня (18 июня 2026) **не подорожал, а подешевел** примерно **на 2,1%**. \n\nКонкретно: 1 января 2022 курс составлял **74,29₽**, сегодня — **72,75₽**"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Курс доллара не вырос, а **снизился**: 1 января 2022 года он составлял **74,29 руб.**, а сегодня (18 июня 2026) — **72,75 руб.** Таким образом, USD подешевел относительно рубля при"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Доллар не подорожал, а слегка подешевел.\n\n**Ответ:** С 1 января 2022 года (курс 74,29 ₽) по сегодняшний день, 18 июня 2026 года (курс 72,75 ₽), курс USD снизился примерно в **0,98 "
         }
       ],
-      "pass": 1
+      "pass": 5
     },
     "pwc": {
       "runs": [
@@ -34,19 +78,178 @@
           ],
           "hallucinated_in_workers": [],
           "hallucinated_in_plan": [],
+          "validator_caught": [],
           "must_have_ok": false,
           "iterations": 1,
-          "answer_preview": "Курс USD на 1 января 2022 года (официальный курс ЦБ РФ) составлял **74,2926 рубля** за 1 доллар. · Курс доллара США к рублю на сегодня, 15 июня 2026 года, составляет **71,91 руб./$"
+          "answer_preview": "Курс USD снизился и составляет 0,98 от курса на 1 января 2022 года."
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 1,
+          "answer_preview": "USD подешевел: курс составил 0,979 от начального значения."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "USD подорожал в 0.979 раза."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "USD подешевел: сегодняшний курс составляет 0.9792 от курса на 1 января 2022 года, то есть в 0,9792 раза."
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 1,
+          "answer_preview": "Доллар подешевел в 0,979 раза (примерно на 2,1%)."
         }
       ],
-      "pass": 0
+      "pass": 2
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "USD подешевел в 0,979 раза."
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 1,
+          "answer_preview": "Курс доллара снизился в 0,98 раза — то есть сегодня он составляет 98% от уровня на 1 января 2022 года."
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 1,
+          "answer_preview": "Курс USD снизился: на сегодня он составляет 0,98 от уровня 1 января 2022 года."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "USD подешевел в 1,02 раза."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "USD подешевел в 0,98 раза (то есть его курс снизился на 2,1%)."
+        }
+      ],
+      "pass": 3
     }
   },
   {
     "id": "Q2",
     "query": "Какая сейчас реальная ключевая ставка, если инфляцию брать по последнему доступному месяцу, а не по году?",
     "comment": "Класс ошибки B: одиночный не умеет искать «последний доступный» месяц, зацикливается. PWC должен разбить на шаги.",
-    "n": 1,
+    "n": 5,
     "single": {
       "runs": [
         {
@@ -59,10 +262,58 @@
           "hallucinated": [],
           "must_have_ok": true,
           "arith_without_calc": false,
-          "answer_preview": "Готово. Вот итоговый ответ:\n\n**Реальная ключевая ставка сейчас составляет ≈ 5,77% годовых.**\n\nРасчёт: 16,0% (ключевая ставка) − 10,23% (инфляция за апрель 2025, % г/г).\n\n⚠️ Небольш"
+          "answer_preview": "Вот итоговый результат.\n\n---\n\n**Реальная ключевая ставка** (ключевая ставка минус инфляция за последний доступный месяц) составляет **5,77% годовых**.\n\nРассчёт:  \n- Ключевая ставка"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Текущая реальная ключевая ставка (по последней доступной инфляции) составляет **6,13% годовых**.  \nЭто рассчитано как номинальная ставка 16,0% минус инфляция 9,87% г/г (за май 2025"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Реальная ключевая ставка сейчас составляет **5,66 п.п.** (16,00% – 10,34% = 5,66%). *Примечание: данные по ключевой ставке получены из локального архива, так как сервер ЦБ временно"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Текущая **реальная ключевая ставка** составляет **9,2 % годовых** (ключевая ставка 16,0 % − инфляция за март 2026 года 6,8 % г/г).  \n*Примечание: данные по ключевой ставке получены"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Вот итоговый ответ.\n\n---\n\nСейчас **реальная ключевая ставка** составляет **5,77% годовых**.\n\nОна получена как разность текущей номинальной ключевой ставки (16,0%) и инфляции за пос"
         }
       ],
-      "pass": 1
+      "pass": 5
     },
     "pwc": {
       "runs": [
@@ -72,19 +323,168 @@
           "plan_tools": [],
           "hallucinated_in_workers": [],
           "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 3,
+          "answer_preview": "5,66% годовых."
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 1,
+          "answer_preview": "5,66 процентных пункта"
+        }
+      ],
+      "pass": 1
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 2,
+          "answer_preview": "5,66% годовых."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 3,
+          "answer_preview": "5,66% годовых."
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
           "must_have_ok": false,
           "iterations": 3,
           "answer_preview": ""
         }
       ],
-      "pass": 0
+      "pass": 2
     }
   },
   {
     "id": "Q3",
     "query": "Какова накопленная инфляция с января 2022 по март 2026? Рассчитай как произведение всех (1 + ипц_м/100) по месяцам.",
-    "comment": "Класс ошибки D (граница паттерна): требует get_inflation за много месяцев + большое calculate-выражение. Одиночный галлюцинирует get_cumulative_inflation; PWC обычно тоже (Planner может добавить фейк-tool в план). Это — повод для Schema-Validator в домашке.",
-    "n": 1,
+    "comment": "Класс ошибки D (граница паттерна): требует get_inflation за много месяцев + большое calculate-выражение. Одиночный галлюцинирует get_cumulative_inflation; PWC обычно тоже (Планировщик может добавить выдуманный инструмент в план). Это — повод для Schema-Validator в домашке.",
+    "n": 5,
     "single": {
       "runs": [
         {
@@ -97,9 +497,52 @@
           "must_have_ok": false,
           "arith_without_calc": false,
           "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": false,
+          "arith_without_calc": false,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": false,
+          "arith_without_calc": false,
+          "answer_preview": ""
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "У меня нет данных по **помесячной** инфляции — инструмент `get_inflation` возвращает только **годовую** инфляцию (% г/г), то есть рост цен за 12 месяцев, предшествующих указанному "
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": false,
+          "arith_without_calc": false,
+          "answer_preview": ""
         }
       ],
-      "pass": 0
+      "pass": 1
     },
     "pwc": {
       "runs": [
@@ -109,6 +552,772 @@
           "plan_tools": [],
           "hallucinated_in_workers": [],
           "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        }
+      ],
+      "pass": 0
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        }
+      ],
+      "pass": 0
+    }
+  },
+  {
+    "id": "Q4",
+    "query": "Какова реальная доходность рублёвого вклада, если номинальная ставка равна текущей ключевой ставке ЦБ, а инфляция берётся за последний доступный месяц?",
+    "comment": "Модель может предложить get_deposit_rate или get_real_yield — несуществующие инструменты. Валидатор должен перехватить и заставить переплановать на get_key_rate + get_inflation + calculate.",
+    "n": 5,
+    "single": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "**Реальная доходность = 6,5% годовых.**\n\nНоминальная ставка вклада принята равной текущей ключевой ставке ЦБ (16,0%), инфляция за последний доступный месяц (июнь 2025 г.) — 9,5% г/"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Вот итоговый ответ:\n\n⚠️ **Оговорка:** данные по ключевой ставке получены из локального архива, так как сайт ЦБ в моменте был недоступен.\n\nРеальная доходность рублёвого вклада с ном"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Реальная доходность рублёвого вклада составляет **5,66% годовых** (16,00% – 10,34%).\n\n> *Данные по ключевой ставке получены из локального архива (ЦБ в моменте недоступен); инфляция"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "При текущей ключевой ставке **16,00% годовых** и инфляции за февраль 2025 года в **10,06% г/г** реальная доходность рублёвого вклада составляет **5,94% годовых**.\n\n*Небольшое приме"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "**Реальная доходность рублёвого вклада при текущих условиях составляет 10,66% годовых.**\n\n*Номинальная ставка* (ключевая ставка ЦБ РФ) — **21,00%** годовых (данные из локального ар"
+        }
+      ],
+      "pass": 5
+    },
+    "pwc": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 3,
+          "answer_preview": "Реальная доходность рублёвого вклада составляет 5,77% годовых."
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 3,
+          "answer_preview": "Реальная доходность рублёвого вклада составляет 5,66% годовых."
+        }
+      ],
+      "pass": 2
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 3,
+          "answer_preview": "Реальная доходность рублёвого вклада составляет 6,9% годовых."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 3,
+          "answer_preview": "Реальная доходность рублёвого вклада составляет 5,77% годовых."
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        }
+      ],
+      "pass": 2
+    }
+  },
+  {
+    "id": "Q5",
+    "query": "Сравни курсы USD, EUR и CNY к рублю на 1 января 2023и на 1 января 2024 — как изменился каждый за год?",
+    "comment": "Параллельный кейс: шесть get_fx_rate независимы (три валюты × две даты) — execute_level запускает их одновременно на первом уровне. Плюс calculate для подсчёта изменений. Замеряем ускорение.",
+    "n": 5,
+    "single": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Вот как изменились курсы валют к рублю за год (с 1 января 2023 по 1 января 2024):\n\n| Валюта | Курс на 01.01.2023 | Курс на 01.01.2024 | Изменение (₽) | Изменение (%) |\n|:------:|:-"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Вот сравнительная таблица изменения курсов за 2023 год:\n\n| Валюта | Курс на 01.01.2023 | Курс на 01.01.2024 | Изменение |\n|--------|-------------------:|-------------------:|------"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Вот итоги сравнения курсов валют к рублю за 2023 год (с 1 января 2023 по 1 января 2024):\n\n| Валюта | Курс на 01.01.2023 | Курс на 01.01.2024 | Абс. изменение | Относит. изменение |"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Вот как изменились курсы основных валют к рублю с 1 января 2023 по 1 января 2024:\n\n| Валюта | 01.01.2023 | 01.01.2024 | Изменение (руб.) | Изменение (%) |\n|--------|-----------|---"
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Вот как изменились курсы валют к рублю за 2023 год (с 1 января 2023 по 1 января 2024):\n\n| Валюта | Курс на 01.01.2023 | Курс на 01.01.2024 | Абсолютное изменение | Относительное из"
+        }
+      ],
+      "pass": 5
+    },
+    "pwc": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 2,
+          "answer_preview": "За 2023 год курс доллара вырос на 19,35 рубля, евро — на 23,53 рубля, юаня — на 2,68 рубля."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "Курс USD вырос на 19,35 руб., EUR — на 23,53 руб., CNY — на 2,68 руб."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "Курсы USD, EUR и CNY к рублю выросли на 19,35 руб., 23,54 руб. и 2,68 руб. соответственно."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "Курс USD вырос на 19,35 руб., EUR — на 23,53 руб., CNY — на 2,68 руб. за год."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "За год с 1 января 2023 по 1 января 2024 курс USD вырос на 19,35 руб., EUR — на 23,53 руб., CNY — на 2,68 руб."
+        }
+      ],
+      "pass": 4
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "За 2023 год курс USD вырос на 19,35 руб., EUR — на 23,53 руб., CNY — на 2,68 руб."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "Курс USD вырос на 19,35 руб., EUR — на 23,54 руб., CNY — на 2,68 руб."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 2,
+          "answer_preview": "За год курс USD вырос на 19,35 руб., EUR — на 23,53 руб., CNY — на 2,68 руб."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 1,
+          "answer_preview": "За год с 1 января 2023 по 1 января 2024 курс USD вырос на 19,35 руб., EUR — на 23,53 руб., CNY — на 2,68 руб."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": true,
+          "iterations": 2,
+          "answer_preview": "Курс USD вырос на 19,35 руб., EUR — на 23,53 руб., CNY — на 2,68 руб. за год (с 1 января 2023 по 1 января 2024)."
+        }
+      ],
+      "pass": 5
+    }
+  },
+  {
+    "id": "Q6",
+    "query": "Какой был реальный курс доллара с поправкой на накопленную инфляциюс января 2023 по сегодня?",
+    "comment": "Модель может предложить get_real_fx_rate или get_inflation_adjusted_rate.Валидатор должен перехватить и заставить использовать get_fx_rate + get_inflation + calculate.",
+    "n": 5,
+    "single": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [
+            "get_fx_rate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": false,
+          "arith_without_calc": false,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": false,
+          "arith_without_calc": false,
+          "answer_preview": ""
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Вот итоговый расчёт.\n\n---\n\n**Исходные данные (по ЦБ РФ и Росстату):**\n\n| Параметр | Значение |\n|---|---|\n| Курс USD 9 января 2023 | 70,34 руб. |\n| Курс USD 18 июня 2026 (сегодня) |"
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "get_fx_rate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": false,
+          "arith_without_calc": false,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "get_fx_rate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": false,
+          "arith_without_calc": false,
+          "answer_preview": ""
+        }
+      ],
+      "pass": 1
+    },
+    "pwc": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        }
+      ],
+      "pass": 0
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate",
+            "get_inflation"
+          ],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
+          "must_have_ok": false,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "validator_caught": [],
           "must_have_ok": false,
           "iterations": 3,
           "answer_preview": ""
