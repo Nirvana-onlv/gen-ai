@@ -1,0 +1,8 @@
+openai
+httpx
+pydantic
+python-dotenv
+datasets
+huggingface_hub
+sentence-transformers
+chromadb
